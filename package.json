@@ -1,0 +1,23 @@
+{
+  "name": "uber-eats",
+  "version": "1.0.0",
+  "description": "Uber Eats Food Delivery App",
+
+  "scripts": {
+    "start": "npx parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harsh-narule1704/Uber-Eats.git"
+  },
+  "author": "Harsh Narule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harsh-narule1704/Uber-Eats/issues"
+  },
+  "homepage": "https://github.com/harsh-narule1704/Uber-Eats#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
