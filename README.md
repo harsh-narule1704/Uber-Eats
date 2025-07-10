@@ -1,18 +1,19 @@
 
 # Uber Eats 🍔🍟🍕
 
- Header
-    -logo
+ Header<br>
+    -logo<br>
     -nav items
- Body
-    -search
-    -restaurantContainer
-        -restaurantCard
-            -img
+ <br>
+ Body<br>
+    -search<br>
+    -restaurantContainer<br>
+        -restaurantCard<br>
+            -img<br>
             -name, rating, cuisine,delivery time
-
- Footer
-    -copyright
-    -links
-    -address
+<br>
+ Footer<br>
+    -copyright<br>
+    -links<br>
+    -address<br>
     -contact
