@@ -1,7 +1,12 @@
+.entire-body{
+    background-color: #a0f0ce;
+    color:  #1a1a1a;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    border: 1px solid #c1066e;
 }
 
 .logo{
@@ -27,22 +32,33 @@
     
 }
 .res-card{
-    
+    background-color:  #06c167;
     width:200px;
-    
     padding: 5px;
     margin: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .res-card:hover{
-    border: 1px solid black;
+    border: 1px solid #c1066e;
     cursor: pointer;
     box-shadow: border-box;
 }
-.search {
+.filter-btn {
     padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: 250px;
+    font-size: large;
+    border-radius: 16px;
+    background-color: #06c167;
+    color: beige;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .res-logo{
     width: 100%;
+    border-radius: 15px;
 }
