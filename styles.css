@@ -1,15 +1,18 @@
 .entire-body{
-    background-color: #a0f0ce;
-    color:  #1a1a1a;
+    background-color: #FAF9F6;
+    color:   #2E2E2E;
 }
 
 .header{
     display: flex;
     justify-content: space-between;
-    border: 1px solid #c1066e;
+    color: #5D4037;
+    border: 1px solid #8D6E63;
+    border-radius: 16px;
 }
 
 .logo{
+    margin: 10px;
     width: 200px;
 }
 
@@ -32,16 +35,17 @@
     
 }
 .res-card{
-    background-color:  #06c167;
-    width:200px;
+    background-color:  #8D6E63;
+    color: #FAF9F6;
+    width:220px;
     padding: 5px;
     margin: 5px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .res-card:hover{
-    border: 1px solid #c1066e;
+    border: 1px solid #FFD54F;
     cursor: pointer;
     box-shadow: border-box;
 }
@@ -52,13 +56,15 @@
     height: 50px;
     width: 250px;
     font-size: large;
+    color:#2E2E2E;
     border-radius: 16px;
-    background-color: #06c167;
-    color: beige;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: #2E2E2E;
+    background-color: #FFD54F;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
 }
 
 .res-logo{
     width: 100%;
     border-radius: 15px;
+    
 }
