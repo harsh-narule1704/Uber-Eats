@@ -1,51 +1,5 @@
 
- import React from "react";
- import ReactDOM from "react-dom/client";
 
-
- const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="/ubereats.png"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
- }
-
- const RestaurantCard = (props) => {
-    const {resData} = props;
-    const {cloudinaryImageId, 
-            name, 
-            cuisines, 
-            avgRating, 
-            costForTwo, 
-            deliveryTime
-        } = resData?.data;
-    return (
-        <div className="res-card" >
-            <img alt="res-logo" className="res-logo"
-                src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ resData.data.cloudinaryImageId}
-            />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating}⭐</h4>
-            <h4>₹{costForTwo / 100} For Two</h4>
-            <h4>{deliveryTime} Mins</h4>
-            
-        </div>
-    )
- }
-
- // RestaurantList is JSON Data for displaying cards
 const restaurantList = [
   {
     type: "restaurant",
@@ -275,30 +229,4 @@ const restaurantList = [
   },
 ];
 
- const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                {restaurantList.map((restaurant) => (
-                    <RestaurantCard key={restaurant.data.id} resData={restaurant} />
-            ))}
-                
-            </div>
-        </div>
-    )
- }
- const AppLayout = () => {
-    return (
-        <div className="app">
-            {/*Header*/}
-            <Header />
-            {/* Body*/}
-            <Body/>
-        </div>
-    )
- }
-
- const root = ReactDOM.createRoot(document.getElementById("root"));
-
- root.render(<AppLayout/>);
+export default restaurantList;
