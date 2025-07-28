@@ -19,6 +19,65 @@
 .nav-items{
     padding: 0px 20px;
 }
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 600px;
+}
+
+.search-box {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #8D6E63;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    color: #5D4037;
+    transition: all 0.3s ease;
+}
+
+.search-box:focus {
+    border-color: #5D4037;
+    box-shadow: 0 0 0 2px rgba(93, 64, 55, 0.1);
+}
+
+.search button {
+    padding: 12px 20px;
+    background-color: #FFD54F;
+    color: #2E2E2E;
+    border: 1px solid #2E2E2E;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.search button:hover {
+    background-color: #FFC107;
+    box-shadow: 0 6px 16px rgba(93, 64, 55, 0.3);
+}
+
+
+.filter-btn:hover {
+    background-color: #5D4037;
+    color: white;
+}
 .nav-items > ul{
     font-size: 24px;
     display: flex;
@@ -49,6 +108,11 @@
     cursor: pointer;
     box-shadow: border-box;
 }
+
+.filter{
+    display: flex;
+
+}
 .filter-btn {
     padding: 10px;
     margin: 10px;
@@ -56,6 +120,7 @@
     height: 50px;
     width: 250px;
     font-size: large;
+    font-style: bold;
     color:#2E2E2E;
     border-radius: 16px;
     border-color: #2E2E2E;
@@ -67,4 +132,37 @@
     width: 100%;
     border-radius: 15px;
     
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    margin: 20px;
+    width: 200px;
+    height: 400px;
+    background-color: black;
+
+}
+
+.login{
+    padding: 0 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: large;
+    font-weight: 300;
+    color:#2E2E2E;
+    border-radius: 20px;
+    border-color: #2E2E2E;
+    background-color: #FFD54F;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.search{
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 250px;
+    border-radius: 16px;
 }

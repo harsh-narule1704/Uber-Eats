@@ -2,15 +2,22 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantList from "../utils/mockData";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
 
     //Local state variable
     const [listOfRestaurants, setrestaurantList] = useState(restaurantList);
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
+    const [searchText,setSearchText] = useState(""); 
+    
+    //whenever state variables update, react triggers a reconciliation cycle(re-renders the component).
     useEffect(() => {
         fetchData();
     }, []);
+
+
 
     const fetchData = async () => {
         try {
@@ -39,6 +46,7 @@ const Body = () => {
 
             if (restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants) {
                 setrestaurantList(restaurantCard.card.card.gridElements.infoWithStyle.restaurants);
+                setFilteredRestaurant(restaurantCard.card.card.gridElements.infoWithStyle.restaurants);
             } else {
                 console.error("Could not find restaurant data in the API response");
                 // Fallback to mock data if available
@@ -51,22 +59,45 @@ const Body = () => {
         }
     };
 
-    return (
+
+    return listOfRestaurants.length === 0 ? (<Shimmer/>) : (
         <div className="body">
             <div className="filter">
-                <button className="filter-btn"
-                onClick={() =>{
-                    setrestaurantList()
-                    const filteredList = listOfRestaurants.filter(
-                        (restaurant) => restaurant.data.avgRating > 4.1
-                    );
-                    setrestaurantList(filteredList);
-                }}
+                <div className="search">
+                    <input 
+                        type="text" 
+                        className="search-box" 
+                        value={searchText} 
+                        onChange={(e) => {
+                            setSearchText(e.target.value);
+                            // Filter restaurants on every keystroke
+                            const searchValue = e.target.value.toLowerCase();
+                            const filtered = listOfRestaurants.filter((res) => 
+                                res?.info?.name?.toLowerCase().includes(searchValue) ||
+                                res?.info?.cuisines?.join(" ").toLowerCase().includes(searchValue)
+                            );
+                            setFilteredRestaurant(filtered);
+                        }}
+                    />
+                    <button onClick={() => {
+                        const filtered = listOfRestaurants.filter((res) => 
+                            res?.info?.name?.toLowerCase().includes(searchText.toLowerCase()) ||
+                            res?.info?.cuisines?.join(" ").toLowerCase().includes(searchText.toLowerCase())
+                        );
+                        setFilteredRestaurant(filtered);
+                    }}>Search</button>
+                </div>
+                <button 
+                    className="filter-btn"
+                    onClick={() => {
+                        const filtered = listOfRestaurants.filter((res) => res?.info?.avgRating > 4);
+                        setFilteredRestaurant(filtered);
+                    }}
                 >Top Rated Restaurants</button>
             </div>
             <div className="res-container">
-                {listOfRestaurants.filter((res) => res?.info?.id).map((restaurant) => (
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                {filteredRestaurant.map((restaurant) => (
+                    <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
             ))}
                 
             </div>
