@@ -88,6 +88,16 @@
     margin: 10px;
 }
 
+.nav-items > ul > li > a {
+    text-decoration: none;
+    color: #5D4037;
+    transition: color 0.3s ease;
+}
+
+.nav-items > ul > li > a:hover {
+    color: #FFD54F;
+}
+
 .res-container{
     display: flex;
     flex-wrap: wrap;
@@ -134,16 +144,247 @@
     
 }
 
-.shimmer-container{
+.shimmer-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
 }
-.shimmer-card{
-    margin: 20px;
-    width: 200px;
-    height: 400px;
-    background-color: black;
 
+.shimmer-card {
+    width: 220px;
+    height: 350px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.shimmer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(141, 110, 99, 0.1),
+        rgba(255, 213, 79, 0.2),
+        rgba(141, 110, 99, 0.1),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.shimmer-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        180deg,
+        #8D6E63 200px,
+        #f0f0f0 200px,
+        #f0f0f0 220px,
+        #FAF9F6 220px,
+        #FAF9F6 250px,
+        #f0f0f0 250px,
+        #f0f0f0 270px,
+        #FAF9F6 270px
+    );
+}
+
+/* Shimmer for Restaurant Menu */
+.shimmer-menu {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.shimmer-restaurant-info {
+    height: 150px;
+    background: #8D6E63;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.shimmer-restaurant-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 213, 79, 0.2),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.shimmer-menu-items {
+    background: #FAF9F6;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.shimmer-menu-item {
+    height: 100px;
+    background: #f0f0f0;
+    margin: 15px 0;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(141, 110, 99, 0.1),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.menu {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.restaurant-info {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #8D6E63;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+    color: #FAF9F6;
+}
+
+.restaurant-info h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #FFD54F;
+}
+
+.restaurant-info p {
+    color: #FAF9F6;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.restaurant-info .rating {
+    background-color: #FFD54F;
+    color: #5D4037;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.menu-items {
+    background-color: #FAF9F6;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.menu-items h2 {
+    color: #5D4037;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #8D6E63;
+    padding-bottom: 10px;
+}
+
+.category {
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(93, 64, 55, 0.1);
+}
+
+.category h3 {
+    color: #5D4037;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #8D6E63;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px dashed #8D6E63;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #FFF8E1;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h4 {
+    color: #5D4037;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.item-details p {
+    color: #8D6E63;
+    font-size: 14px;
+}
+
+.item-price {
+    color: #5D4037;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #FFD54F;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.item-description {
+    color: #8D6E63;
+    font-size: 13px;
+    margin-top: 5px;
+    line-height: 1.5;
 }
 
 .login{

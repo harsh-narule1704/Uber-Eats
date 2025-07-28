@@ -2,7 +2,7 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantList from "../utils/mockData";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "./Shimmer.js";
 
 const Body = () => {
 
