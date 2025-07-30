@@ -15,17 +15,19 @@ const RestaurantCard = (props) => {
     } = resData?.info;
 
     return (
-        <Link to={`/restaurant/${id}`} className="res-card" style={{ textDecoration: 'none' }}>
-            <img
-                alt="res-logo"
-                className="res-logo"
-                src={CDN_URL + cloudinaryImageId}
-            />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating}⭐</h4>
-            <h4>{costForTwo} </h4>
-            <h4>{sla.slaString}</h4>
+        <Link to={`/restaurants/${id}`} className="restaurant-link">
+            <div className="res-card">
+                <img
+                    alt="res-logo"
+                    className="res-logo"
+                    src={CDN_URL + cloudinaryImageId}
+                />
+                <h3>{name}</h3>
+                <h4>{cuisines.join(", ")}</h4>
+                <h4>{avgRating}⭐</h4>
+                <h4>{costForTwo} </h4>
+                <h4>{sla.slaString}</h4>
+            </div>
         </Link>
     );
 };
