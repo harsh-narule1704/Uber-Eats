@@ -438,3 +438,8 @@
     width: 250px;
     border-radius: 16px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
