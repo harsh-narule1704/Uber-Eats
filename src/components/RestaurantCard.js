@@ -15,8 +15,8 @@ const RestaurantCard = (props) => {
     } = resData?.info;
 
     return (
-        <Link to={`/restaurants/${id}`} className="restaurant-link">
-            <div className="res-card">
+        <div className="res-card">
+            <Link to={`/restaurants/${id}`} className="restaurant-link">
                 <img
                     alt="res-logo"
                     className="res-logo"
@@ -25,11 +25,12 @@ const RestaurantCard = (props) => {
                 <h3>{name}</h3>
                 <h4>{cuisines.join(", ")}</h4>
                 <h4>{avgRating}⭐</h4>
-                <h4>{costForTwo} </h4>
+                <h4>{costForTwo}</h4>
                 <h4>{sla.slaString}</h4>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
+        
 };
 
 export default RestaurantCard;

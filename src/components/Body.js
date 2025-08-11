@@ -4,6 +4,7 @@ import restaurantList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
+import { useOnlineStatus } from "../utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -60,6 +61,14 @@ const Body = () => {
         }
     };
 
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false){
+        return <h1>
+            🚨 Looks like you're offline !!!
+            ⚠️ Please check your internet connection.......
+        </h1>
+    }
 
     return listOfRestaurants.length === 0 ? (<Shimmer/>) : (
         <div className="body">
@@ -98,13 +107,10 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {filteredRestaurant.map((restaurant) => (
-                    <Link 
-                        key={restaurant?.info?.id} 
-                        to={`/restaurant/${restaurant?.info?.id}`}
-                        className="restaurant-link"
-                    >
-                        <RestaurantCard resData={restaurant} />
-                    </Link>
+                    <RestaurantCard 
+                        key={restaurant?.info?.id}
+                        resData={restaurant}
+                    />
                 ))}
             </div>
         </div>

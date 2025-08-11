@@ -1,37 +1,14 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer.js";
+import useRestaurantMenu from "../utils/useRestaurantMenu.js";
+import { useState } from "react";
+
 
 const RestaurantMenu = () => {
     const { resId } = useParams();
-    const [resInfo, setResInfo] = useState(null);
-
-    useEffect(() => {
-        fetchMenu();
-    }, []);
-
-    const fetchMenu = async () => {
-        try {
-            const data = await fetch(
-                "https://api.allorigins.win/get?url=" +
-                encodeURIComponent(
-                    `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.8530093&lng=74.56234789999999&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
-                )
-            );
-
-            if (!data.ok) {
-                throw new Error(`HTTP error! status: ${data.status}`);
-            }
-
-            const response = await data.json();
-            const json = JSON.parse(response.contents);
-            console.log("Restaurant Menu:", json);
-            setResInfo(json.data);
-        } catch (error) {
-            console.error("Error while fetching restaurant menu:", error);
-
-        }
-    };
+    
+    //Custom hook to fetch restaurant menu
+    const resInfo = useRestaurantMenu(resId);
 
     if (resInfo === null) return <Shimmer type="MENU" />;
 
