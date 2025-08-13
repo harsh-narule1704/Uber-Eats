@@ -15,18 +15,18 @@ const RestaurantCard = (props) => {
     } = resData?.info;
 
     return (
-        <div className="res-card">
-            <Link to={`/restaurants/${id}`} className="restaurant-link">
+        <div className="bg-[#8D6E63] text-[#FAF9F6] w-[220px] h-[550px] p-[15px] m-[5px] rounded-[15px] shadow-[0_4px_12px_rgba(0,0,0,0.15)] flex flex-col hover:border hover:border-[#FFD54F] cursor-pointer">
+            <Link to={`/restaurants/${id}`} className="no-underline text-inherit">
                 <img
                     alt="res-logo"
-                    className="res-logo"
+                    className="w-full rounded-[12px] object-cover mb-2"
                     src={CDN_URL + cloudinaryImageId}
                 />
-                <h3>{name}</h3>
-                <h4>{cuisines.join(", ")}</h4>
-                <h4>{avgRating}⭐</h4>
-                <h4>{costForTwo}</h4>
-                <h4>{sla.slaString}</h4>
+                <h3 className="m-0 text-[25px] text-[#FFD54F] mb-1">{name}</h3>
+                <h4 className="m-0 text-[18px] text-[#FAF9F6] opacity-90 whitespace-nowrap overflow-hidden text-ellipsis mb-1">{cuisines.join(", ")}</h4>
+                <h4 className="m-0 text-[18px] text-[#FAF9F6] opacity-90 mb-1">{avgRating}⭐</h4>
+                <h4 className="m-0 text-[18px] text-[#FAF9F6] opacity-90 mb-1">{costForTwo}</h4>
+                <h4 className="m-0 text-[18px] text-[#FAF9F6] opacity-90">{sla.slaString}</h4>
             </Link>
         </div>
     );

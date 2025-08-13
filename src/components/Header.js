@@ -8,28 +8,52 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
     return (
-        <div className="header">
-            <div className="logo-container">
+        <div className="flex justify-between text-[#5D4037] border border-[#8D6E63] rounded-2xl">
+            <div>
                 <Link to="/">
-                    <img className="logo" src={LOGO_URL} alt="logo" />
+                    <img className="m-[10px] w-[200px]" src={LOGO_URL} alt="logo" />
                 </Link>
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Online Status: {onlineStatus ? "✅" : "🛑"}</li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to="/grocery">Grocery</Link></li>
-                    <li><Link to="/cart">Cart</Link></li>
+            <div className="px-5">
+                <ul className="flex text-2xl list-none items-center">
+                    <li className="p-[10px] m-[10px]">
+                        Online Status: {onlineStatus ? "✅" : "🛑"}
+                    </li>
+                    <li className="p-[10px] m-[10px]">
+                        <Link to="/" className="no-underline text-[#5D4037] transition-colors duration-300 hover:text-[#FFD54F]">
+                            Home
+                        </Link>
+                    </li>
+                    <li className="p-[10px] m-[10px]">
+                        <Link to="/about" className="no-underline text-[#5D4037] transition-colors duration-300 hover:text-[#FFD54F]">
+                            About
+                        </Link>
+                    </li>
+                    <li className="p-[10px] m-[10px]">
+                        <Link to="/contact" className="no-underline text-[#5D4037] transition-colors duration-300 hover:text-[#FFD54F]">
+                            Contact Us
+                        </Link>
+                    </li>
+                    <li className="p-[10px] m-[10px]">
+                        <Link to="/grocery" className="no-underline text-[#5D4037] transition-colors duration-300 hover:text-[#FFD54F]">
+                            Grocery
+                        </Link>
+                    </li>
+                    <li className="p-2.5 m-2.5">
+                        <Link to="/cart" className="no-underline text-brown-dark hover:text-secondary transition-colors duration-300">
+                            Cart
+                        </Link>
+                    </li>
                     <button 
-                        className="login" 
+                        className="px-5 py-2 bg-secondary text-text-dark border border-text-dark rounded-2xl text-lg font-bold bg-[#FFD54F] transition-all duration-300 shadow-card  ml-2.5"
                         onClick={() => {
                             btnNameReact === "Login" ? 
                             setBtnNameReact("Logout") : 
                             setBtnNameReact("Login");
                         }}
-                        >{btnNameReact}</button>
+                    >
+                        {btnNameReact}
+                    </button>
                 </ul>
             </div>
         </div>
