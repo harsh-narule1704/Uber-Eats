@@ -7,23 +7,20 @@ module.exports = {
             colors: {
                 'primary': '#8D6E63',
                 'secondary': '#FFD54F',
-                'text-dark': '#2E2E2E',
-                'text-light': '#FAF9F6',
-                'brown': {
-                    DEFAULT: '#8D6E63',
-                    dark: '#5D4037'
-                },
-                'yellow': {
-                    DEFAULT: '#FFD54F',
-                    dark: '#FFC107'
-                }
+                'bg-base': '#F5EDE6',
+                'text-dark': '#2E2E2E'
             },
             boxShadow: {
                 'card': '0 4px 12px rgba(93, 64, 55, 0.2)',
                 'card-hover': '0 6px 16px rgba(93, 64, 55, 0.3)'
-            }
+            },
+            fontFamily: {
+                pacifico: ['Pacifico', 'cursive'],
+            },
         },
     },
-    plugins: [],
+    plugins: [
+        require('tailwind-scrollbar'),
+    ],
 }
 

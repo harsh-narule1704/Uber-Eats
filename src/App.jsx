@@ -1,6 +1,7 @@
 import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import "../styles.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
@@ -14,7 +15,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
     return (
-        <div className="app">
+        <div className="app min-h-screen w-full bg-[#F5EDE6] font-pacifico">
             <Header />
             <Outlet />
         </div>

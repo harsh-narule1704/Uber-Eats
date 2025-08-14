@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/harsh-narule1704/Uber-Eats#readme",
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "parcel": "^2.15.4",
+    "tailwind-scrollbar": "^4.0.2"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",

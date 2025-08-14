@@ -92,12 +92,13 @@ const Body = () => {
                     </button>
                 </div>
             </div>
-            <div className="flex flex-wrap gap-4 p-5 justify-center">
+            <div className="flex flex-wrap gap-6 p-8 justify-center bg-[#F5EDE6]">
                 {filteredRestaurant.map((restaurant) => (
-                    <RestaurantCard 
-                        key={restaurant?.info?.id}
-                        resData={restaurant}
-                    />
+                    <div key={restaurant?.info?.id} className="transform transition-transform duration-200 hover:scale-105">
+                        <RestaurantCard 
+                            resData={restaurant}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
