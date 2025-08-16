@@ -1,3 +1,4 @@
+import UserContext from "../utils/UserContext";
 import User from "./User";
 import UserClass from "./UserClass";
 
@@ -5,7 +6,12 @@ const About = () => {
     return (
         <div>
             <h1>About</h1>
-            <h2>Namaste React Web Series</h2>
+            <div>
+                LoggedIn User
+                <UserContext.Consumer>
+                  {({loggedInUser}) => <h1>{loggedInUser}</h1>}  
+                </UserContext.Consumer>
+            </div>
             {/* <User count={0} /> */}
 
             <UserClass  name={"Harry"} location={"Sangli"} mail={"trainy045@gmail"}/>
